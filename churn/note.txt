@@ -1,0 +1,36 @@
+📊 Rangkuman Hasil Analisis Model Prediksi Churn
+
+🎯 Tujuan
+Model ini dikembangkan untuk memprediksi apakah pelanggan akan berhenti menggunakan layanan (churn) atau tidak, berdasarkan data pelanggan seperti jenis layanan (Fiber Optic) dan jenis Paket langganan yang digunakan.
+
+🧾 Data Ringkasan
+- Jumlah data: 1130 baris
+- Fitur yang digunakan:
+    Fiber Optic: apakah pelanggan menggunakan layanan fiber optic (kategori)
+    Paket: jenis paket langganan yang dipilih pelanggan (kategori)
+
+⚙️ Model dan Pipeline
+    Model: RandomForestClassifier
+    Preprocessing: One-hot encoding pada fitur kategorikal
+    Data split: 80% train / 20% test (stratified)
+
+📈 Hasil Evaluasi Model
+|                        | Prediksi = Tidak Churn | Prediksi = Churn     |
+| ---------------------- | ---------------------- | -------------------- |
+| **Asli = Tidak Churn** | 421 (True Negative)    | 198 (False Positive) |
+| **Asli = Churn**       | 155 (False Negative)   | 356 (True Positive)  |
+
+📊 Classification Report
+| Metric    | Tidak Churn (0) | Churn (1) |
+| --------- | --------------- | --------- |
+| Precision | 0.73            | 0.64      |
+| Recall    | 0.68            | 0.70      |
+| F1-Score  | 0.70            | 0.67      |
+| Support   | 619             | 511       |
+
+
+
+
+- Akurasi Total: 69%
+- F1-score rata-rata: 0.69
+- Recall churn (1): 70% → model cukup mampu menangkap pelanggan yang benar-benar churn.

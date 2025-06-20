@@ -1,36 +1,31 @@
-📊 Rangkuman Hasil Analisis Model Prediksi Churn
+📊 Analisis Pelanggan dengan Menggunakan Machine Learning
 
 🎯 Tujuan
-Model ini dikembangkan untuk memprediksi apakah pelanggan akan berhenti menggunakan layanan (churn) atau tidak, berdasarkan data pelanggan seperti jenis layanan (Fiber Optic) dan jenis Paket langganan yang digunakan.
+Menganalisis data pelanggan untuk memprediksi kemungkinan churn (pelanggan yang berhenti berlangganan)
 
-🧾 Data Ringkasan
-- Jumlah data: 1130 baris
-- Fitur yang digunakan:
-    Fiber Optic: apakah pelanggan menggunakan layanan fiber optic (kategori)
-    Paket: jenis paket langganan yang dipilih pelanggan (kategori)
+🚀 langkah langkah:
+1. Mengimport library: Mengimport library yang diperlukan seperti pandas, numpy, sklearn, dan lain-lain.
+2. Mengeload data: Mengeload data pelanggan dari file CSV.
+3. Mengolah data: Mengolah data pelanggan dengan melakukan pemetaan (mapping) pada kolom "Status" untuk mengubahnya menjadi nilai numerik.
+4. Membagi data: Membagi data menjadi dua bagian, yaitu data latih (train) dan data uji (test).
+5. Membuat model: Membuat model machine learning dengan menggunakan Random Forest Classifier.
+6. Melatih model: Melatih model dengan menggunakan data latih.
+7. Menguji model: Menguji model dengan menggunakan data uji.
+8. Mengevaluasi model: Mengevaluasi model dengan menggunakan metrik seperti confusion matrix dan classification report.
 
-⚙️ Model dan Pipeline
-    Model: RandomForestClassifier
-    Preprocessing: One-hot encoding pada fitur kategorikal
-    Data split: 80% train / 20% test (stratified)
+🌟 Fungsi:
+1. preprocessing_data(df): Mengolah data pelanggan dengan melakukan pemetaan (mapping) pada kolom "Status".
+2. split_data(df): Membagi data menjadi dua bagian, yaitu data latih (train) dan data uji (test).
+3. training_model(X_train, y_train): Membuat model machine learning dengan menggunakan Random Forest Classifier dan melatihnya dengan menggunakan data latih.
+4. evaluasi_model(model, X_test, y_test): Menguji model dengan menggunakan data uji dan mengevaluasi model dengan menggunakan metrik seperti confusion matrix dan classification report.
+5. print_data_info(df, X_train, X_test): Mencetak informasi tentang data pelanggan, seperti jumlah data awal, jumlah data latih, dan jumlah data uji.
+6. print_total_churn(df): Mencetak jumlah pelanggan yang churn.
+7. print_total_status(df): Mencetak jumlah pelanggan berdasarkan status.
+8. cari_fiber_optik(df): Mencari jumlah pelanggan yang berlangganan fiber optik.
+9. cari_fiber_optik_churn(df): Mencari jumlah pelanggan yang berlangganan fiber optik berpootensi churn.
 
-📈 Hasil Evaluasi Model
-|                        | Prediksi = Tidak Churn | Prediksi = Churn     |
-| ---------------------- | ---------------------- | -------------------- |
-| **Asli = Tidak Churn** | 421 (True Negative)    | 198 (False Positive) |
-| **Asli = Churn**       | 155 (False Negative)   | 356 (True Positive)  |
-
-📊 Classification Report
-| Metric    | Tidak Churn (0) | Churn (1) |
-| --------- | --------------- | --------- |
-| Precision | 0.73            | 0.64      |
-| Recall    | 0.68            | 0.70      |
-| F1-Score  | 0.70            | 0.67      |
-| Support   | 619             | 511       |
-
-
-
-
-- Akurasi Total: 69%
-- F1-score rata-rata: 0.69
-- Recall churn (1): 70% → model cukup mampu menangkap pelanggan yang benar-benar churn.
+📚 Catatan:
+- Pastikan untuk mengimport library yang diperlukan sebelum menjalankan kode.
+- Pastikan untuk mengeload data pelanggan dari file CSV sebelum menjalankan kode.
+- Pastikan untuk menjalankan fungsi-fungsi tersebut dalam urutan yang benar untuk mendapatkan hasil yang sesuai.
+- Pastikan untuk mengolah data pelanggan dengan pemetaan (mapping) pada kolom "Status" sebelum membaginya menjadi data latih dan data uji.

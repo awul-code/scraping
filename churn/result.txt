@@ -1,0 +1,58 @@
+
+===================================================
+Confusion Matrix:
+                    Prediksi Churn     Prediksi Tidak Churn
+Actual Churn:        421              198
+Actual Non-Churn:    155              356
+
+
+Evaluasi Model:
+              precision    recall  f1-score   support
+
+           0       0.73      0.68      0.70       619
+           1       0.64      0.70      0.67       511
+
+    accuracy                           0.69      1130
+   macro avg       0.69      0.69      0.69      1130
+weighted avg       0.69      0.69      0.69      1130
+
+
+===================================================
+Total awal: 5650
+Setelah mapping churn: 5650
+Jumlah data test: 1130
+Jumlah data train: 4520
+
+===================================================
+
+Jumlah Churn:
+Churn
+0    2948
+1    2702
+Name: count, dtype: int64
+
+===================================================
+
+Jumlah Status:
+Status
+Aktif     2937
+Putus     2549
+Blokir     153
+Cuti        11
+Name: count, dtype: int64
+
+===================================================
+
+Jumlah Fiber Optik:
+Fiber Optic
+Tidak    4029
+Ya       1621
+Name: count, dtype: int64
+
+Jumlah Fiber Optik Churn:
+Fiber Optic
+Tidak    2290
+Ya        412
+Name: count, dtype: int64
+
+===================================================
